@@ -98,6 +98,17 @@ For a licence page, `JOURNEY` writes the document head itself, then appends chro
 
 Routes COBOL answers itself are `/`, `/cy`, `/licence-length`, `/name`, `/date-of-birth`, `/where-you-will-fish`, `/email`, `/check-answers`, and `/confirmation`. Any other path is a static file, or a 404 when that file is missing.
 
+## Google Cloud Run
+
+The image listens on `$PORT` (8080 on Cloud Run). From this directory, with a billed project selected:
+
+```sh
+gcloud config set project PROJECT_ID
+./scripts/deploy-cloud-run.sh
+```
+
+The script deploys the service `cobol-frontend` in `europe-west2`. The site has no `/health` route, so the probes use `/`.
+
 ## Run with Docker
 
 Docker is the supported way to run the server. The image builds the fixture site, compiles the COBOL program with GnuCOBOL, and listens on port 8080.
