@@ -1,5 +1,5 @@
 {
-  "name": "cobol-frontend",
+  "name": "govuk-frontend-example-cobol",
   "private": true,
   "type": "module",
   "scripts": {
